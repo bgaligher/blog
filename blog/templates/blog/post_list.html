@@ -8,16 +8,13 @@
             <h1><a href="/">BGally Blog</a></h1>
         </header>
 
-        <article>
-            <time>published: 14.06.2014, 12:14</time>
-            <h2><a href="">My first post</a></h2>
-            <p>Hello my fellow earthling.</p>
-        </article>
+        {% for post in posts %}
+            <article>
+                <time>published: {{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
 
-        <article>
-            <time>published: 14.06.2014, 12:14</time>
-            <h2><a href="">My second post</a></h2>
-            <p>I come in peace.</p>
-        </article>
     </body>
 </html>
